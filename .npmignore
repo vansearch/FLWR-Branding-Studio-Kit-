@@ -1,0 +1,20 @@
+# Sensitive Data (Redundant but Critical)
+client_intel/
+clients/
+.env
+.DS_Store
+
+# Development & Documentation
+.git/
+.gitignore
+.agent/
+docs/
+scripts/
+task.md
+implementation_plan.md
+processed_output/
+artifacts/
+venv/
+requirements.txt
+SKILL.md
+CONTRIBUTING.md
