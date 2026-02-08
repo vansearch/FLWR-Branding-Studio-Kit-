@@ -19,16 +19,23 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Publish to Marketplace
+      - name: Install ClawHub CLI
+        run: npm install -g clawdhub
+
+      - name: Authenticate with ClawHub
         env:
           CLAWDHUB_TOKEN: ${{ secrets.CLAWDHUB_TOKEN }}
+        run: clawdhub login --token "$CLAWDHUB_TOKEN"
+
+      - name: Publish to Marketplace
         run: |
           echo "🚀 Publishing version ${GITHUB_REF_NAME}..."
           
-          # Use npx to run without global install (more reliable)
-          npx clawdhub publish . \
-            --token "$CLAWDHUB_TOKEN" \
+          # Extract version from tag (e.g., v1.0.0 -> 1.0.0)
+          VERSION=${GITHUB_REF_NAME#v}
+          
+          clawdhub publish . \
             --slug flwr-branding-studio-kit \
             --name "FLWR Branding Studio Kit" \
-            --version "${GITHUB_REF_NAME#v}" \
-            --changelog "Automated release from GitHub: ${GITHUB_REF_NAME}"
+            --version "$VERSION" \
+            --changelog "Automated release from GitHub: $VERSION"
