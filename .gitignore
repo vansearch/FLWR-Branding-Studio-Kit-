@@ -1,0 +1,27 @@
+# System
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+.env
+
+# Project Specific
+client_intel/
+clients/
+strategy_output/*
+!strategy_output/.gitkeep
+processed_output/
+*.pdf
+orchestration_extraction.txt
+
+# Editor
+.vscode/
+.idea/
