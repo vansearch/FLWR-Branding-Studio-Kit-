@@ -1,0 +1,44 @@
+name: Publish to SkillsMP Marketplace
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install ClawHub CLI
+        run: npm install -g clawdhub
+
+      - name: Publish to Marketplace
+        env:
+          CLAWDHUB_TOKEN: ${{ secrets.CLAWDHUB_TOKEN }}
+        run: |
+          # Authenticate and Publish in one go if supported, or login first
+          # Using the token flag/env var strategy for CI
+          
+          echo "🚀 Authenticating with ClawHub..."
+          clawdhub login --token "$CLAWDHUB_TOKEN"
+          
+          echo "📦 Publishing version ${GITHUB_REF_NAME}..."
+          
+          # Extract version from tag (e.g., v1.0.0 -> 1.0.0)
+          VERSION=${GITHUB_REF_NAME#v}
+          
+          clawdhub publish . \
+            --slug flwr-branding-studio-kit \
+            --name "FLWR Branding Studio Kit" \
+            --version "$VERSION" \
+            --changelog "Automated release from GitHub: $VERSION"
