@@ -20,7 +20,9 @@ jobs:
           node-version: '20'
 
       - name: Install ClawHub CLI
-        run: npm install -g clawdhub
+        run: |
+          npm install -g undici
+          npm install -g clawdhub
 
       - name: Authenticate with ClawHub
         env:
