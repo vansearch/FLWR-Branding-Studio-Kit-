@@ -12,7 +12,7 @@ Developed by **FLWR Branding Studio** ([@flwr.branding](https://instagram.com/fl
 *   **RACE Framework Integration**: Deep integration of the Research, Action, Context, Example methodology.
 *   **Context Shielding Protocol**: Prevents cross-contamination between clients. The structure is fixed; the content is fluid.
 *   **Anti-Slop Writing Checks**: Automated rules to prevent generic AI copywriting (no "delve", "tapestry", or sequential adjectives).
-*   **Figma-Ready Deliverables**: All outputs are formatted in Markdown specifically designed to be imported directly into Figma slides.
+*   **🎨 Asset Output:** Generates assets in a specific Markdown format.
 *   **Automated Project Setup**: One-command initialization for new client projects.
 
 ## 📦 What's Included

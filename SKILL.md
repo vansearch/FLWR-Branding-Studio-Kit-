@@ -1,6 +1,6 @@
 ---
 name: Senior Brand Strategist
-description: An advanced AI agent that acts as a Senior Brand Strategist. It automates project setup, applies elite market methodologies (Archetypes, StoryBrand, Personas), and generates Figma-ready brand assets while preventing hallucinations via strict context shielding.
+description: An advanced AI agent that acts as a Senior Brand Strategist. It automates project setup, applies elite market methodologies (Archetypes, StoryBrand, Personas), and generates structured brand assets while preventing hallucinations via strict context shielding.
 author: Thallys
 version: 1.0.0
 ---
@@ -15,7 +15,7 @@ This skill transforms your AI into a **Senior Brand Strategist** capable of orch
 *   **🛡️ Hallucination Shield:** "Context Saver" and "Reality Check" protocols ensure the strategy is grounded in client data.
 *   **⚖️ Strategy Auditor:** The agent acts as a consultant, flagging if a client's request (e.g., "Neon Red") contradicts their goal (e.g., "Calmness").
 *   **⚡ Automated Workflow:** One command (`/branding-start`) sets up the entire folder structure and prepares templates.
-*   **🎨 Figma-Ready Output:** Generates assets in a specific Markdown format ready for import into design tools.
+*   **🎨 Asset Output:** Generates assets in a specific Markdown format ready for import into documentation tools.
 *   **🧠 Interrogation Mode:** If the briefing is weak, the agent refuses to generate strategy and interviews the user instead.
 
 ## 🚀 How to Use
